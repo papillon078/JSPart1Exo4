@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>javascript 1 exo 4</title>
+</head>
+<body>
+  <form>
+    <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname" />
+    <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname" />
+    <label for="city">Ville : </label><input type="text" name="city" id="city" />
+    <button  name="submit" id="submit" onclick="identityShow()">Valider</button>
+  </form>
+
+  <script type="text/javascript">
+  function identityShow() {
+    let regexName = /^[a-zA-ZÀ-ÿ’ -]+$/;
+    let lastName = document.getElementById('lastname');
+    let firstName = document.getElementById('firstname');
+    let city = document.getElementById('city');
+
+    /*if(regexName.test(lastName.value)==false || regexName.test(firstName.value)==false || regexName.test(city.value)==false){
+      alert('un champ est au mauvais format');
+    }
+    else{
+      alert("Nom : "+lastName.value+
+    "\nPrénom : "+firstName.value+
+    "\nVille : "+city.value);
+  }*/
+  if(regexName.test(lastName.value) && regexName.test(firstName.value) && regexName.test(city.value)){
+    alert("Nom : "+lastName.value+
+  "\nPrénom : "+firstName.value+
+  "\nVille : "+city.value);
+}
+else{alert('un champ est au mauvais format');}
+  }
+  </script>
+</body>
+</html>
